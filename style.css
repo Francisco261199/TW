@@ -1,1 +1,29 @@
+body {
+  background:#2E8B57;
+  min-width: 800px;
+  min-height: 400px
+}
 
+.logotipo {
+
+  border-radius: 10%;
+}
+
+.align {
+  float: none;
+  text-align:center;
+}
+
+.Button1{
+  border: non;
+  background-color: tan;
+  position: relative;
+  bottom: -200px;
+}
+
+.Button2{
+  border: non;
+  background-color: tan;
+  right: 2;
+  bottom: 2
+}
