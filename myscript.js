@@ -2,7 +2,7 @@ function display_menu(state){
   switch(state){
     case 1:
             document.getElementById("Login").style.display = "block";
-            document.getElementById("buttons").style.display = "none";
+            document.getElementById("Board").style.display = "none";
             document.getElementById("Rules").style.display = "none";
             console.log("pp");
             break;
