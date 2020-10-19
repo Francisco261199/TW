@@ -3,16 +3,45 @@
   <head>
     <meta charset=UTF-8>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="logotipo.png">
+    <script src="myscript.js"></script>
   </head>
 <body>
+  <div class="align">
+    <img src="logotipo.png" alt="Othello" class="logotipo">
+  </div>
+    <div id = "Login" class="Login-box"><h1>Login</h1>
+      <form>
+        <div class="user-box">
+          <input type="text" id="user" name="username" required="">
+          <label>Username</label>
+        </div>
+
+        <div class="user-box">
+          <input type="password" id="pass" name="password" required="">
+          <label>Password</label>
+        </div>
+
+        <button class="Button">Submit</button>
+      </form>
+    </div>
+
+  <!--<div id="Board" onclick="display_menu(1);">
+  </div>
+  <div id="Rules" onclick="display_menu(2);">
+  </div>
+
   <div class ="align">
     <img src="logotipo.png" alt="Othello" class="logotipo">
   </div>
-  <div class ="align">
-    <button class="Button"><h3> Play </h3></button>
-  </div>
-  <div class="align">
-    <button class="Button"><h3> Rules </h3></button>
-  </div>
+
+  <div id="buttons">
+    <div class ="align">
+      <button id="Button1" class="Button" onclick="display_menu(1);"><h3> Play </h3></button>
+    </div>
+    <div class="align">
+      <button id="Button2" class="Button" onclick="display_menu(2);"><h3> Rules </h3></button>
+    </div>
+  </div>-->
 </body>
 </html>
