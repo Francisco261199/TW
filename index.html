@@ -6,36 +6,118 @@
     <link rel="icon" href="logotipo.png">
     <script src="myscript.js"></script>
   </head>
-<body>
-  <div class="align">
-    <img src="logotipo.png" alt="Othello" class="logotipo">
-  </div>
+  <body>
+    <div class="align">
+      <img src="logotipo.png" alt="Othello" class="logotipo">
+    </div>
+
     <div id = "Login" class="Login-box"><h1>Login</h1>
       <form>
         <div class="user-box">
           <input type="text" id="user" name="username" required="">
           <label>Username</label>
         </div>
-
         <div class="user-box">
           <input type="password" id="pass" name="password" required="">
           <label>Password</label>
         </div>
-
-        <button class="Button">Submit</button>
+        <button class="Button" onclick="display_menu(2)">Submit</button>
       </form>
     </div>
 
-  <!--<div id="Board" onclick="display_menu(1);">
-  </div>
-  <div id="Rules" onclick="display_menu(2);">
+  <div id="Board" class="Board-game">
+    <div id="Scoreboard" class="row">
+      <div id="SCRP1" class="disc"></div>
+      <div id="SCRP2" class="disc"></div>
+    </div>
+    <div id="grid">
+      <div class="row">
+        <div class="cell" id="c00" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c01" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c02" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c03" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c04" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c06" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c05" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c07" onclick=""><div class="disc"></div></div>
+      </div>
+      <div class="row">
+        <div class="cell" id="c08" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c09" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c10" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c11" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c12" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c13" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c14" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c15" onclick=""><div class="disc"></div></div>
+      </div>
+      <div class="row">
+        <div class="cell" id="c16" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c17" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c18" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c19" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c20" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c21" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c22" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c23" onclick=""><div class="disc"></div></div>
+      </div>
+      <div class="row">
+        <div class="cell" id="c24" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c25" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c26" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c27" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c28" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c29" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c30" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c31" onclick=""><div class="disc"></div></div>
+      </div>
+      <div class="row">
+        <div class="cell" id="c32" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c33" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c34" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c35" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c36" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c37" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c38" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c39" onclick=""><div class="disc"></div></div>
+      </div>
+      <div class="row">
+        <div class="cell" id="c40" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c41" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c42" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c43" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c44" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c45" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c46" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c47" onclick=""><div class="disc"></div></div>
+      </div>
+      <div class="row">
+        <div class="cell" id="c48" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c49" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c50" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c51" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c52" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c53" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c54" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c55" onclick=""><div class="disc"></div></div>
+      </div>
+      <div class="row">
+        <div class="cell" id="c56" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c57" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c58" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c59" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c60" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c61" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c62" onclick=""><div class="disc"></div></div>
+        <div class="cell" id="c63" onclick=""><div class="disc"></div></div>
+      </div>
+    </div>
   </div>
 
-  <div class ="align">
-    <img src="logotipo.png" alt="Othello" class="logotipo">
+  <div id="Rules" onclick="">
   </div>
 
-  <div id="buttons">
+  <!--<div id="buttons">
     <div class ="align">
       <button id="Button1" class="Button" onclick="display_menu(1);"><h3> Play </h3></button>
     </div>
@@ -43,5 +125,5 @@
       <button id="Button2" class="Button" onclick="display_menu(2);"><h3> Rules </h3></button>
     </div>
   </div>-->
-</body>
+  </body>
 </html>
