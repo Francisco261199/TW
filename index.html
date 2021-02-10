@@ -1,129 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <title>Othello</title>
     <meta charset=UTF-8>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" href="logotipo.png">
-    <script src="myscript.js"></script>
+    <script src="game.js"></script>
+    <script src="requests.js"></script>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
   </head>
   <body>
-    <div class="align">
-      <img src="logotipo.png" alt="Othello" class="logotipo">
+
+    <div id="logo">
+      <img src="logotipo.png" alt="Othello" id=logotipo>
     </div>
 
-    <div id = "Login" class="Login-box"><h1>Login</h1>
+    <div id = "Login"><h1>Login</h1>
       <form>
         <div class="user-box">
-          <input type="text" id="user" name="username" required="">
-          <label>Username</label>
+          <input type="text" id="user" name="username" required>
+          <label><i class="fas fa-user"></i>Username</label>
         </div>
         <div class="user-box">
-          <input type="password" id="pass" name="password" required="">
-          <label>Password</label>
+          <input type="password" id="pass" name="password" required>
+          <label><i class="fas fa-key"></i>Password</label>
         </div>
-        <button class="Button" onclick="display_menu(2)">Submit</button>
       </form>
+      <button class="Button" onclick="register()" id="submit"><i class="fas fa-sign-in-alt"></i></button>
     </div>
 
-  <div id="Board" class="Board-game">
-    <div id="Scoreboard" class="row">
-      <div id="SCRP1" class="disc"></div>
-      <div id="SCRP2" class="disc"></div>
-    </div>
-    <div id="grid">
-      <div class="row">
-        <div class="cell" id="c00" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c01" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c02" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c03" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c04" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c06" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c05" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c07" onclick=""><div class="disc"></div></div>
+    <div id="Board">
+      <div class="navbar">
+        <button class="Button" id="Rulesbtn" onclick="display_message(3)">Rules <i class="fas fa-book-open"></i></button>
+        <button class="Button" id="Scoresbtn" onclick="ranking(),display_message(4)">Scores <i class="fas fa-clipboard"></i></button>
+        <button class="Button" id="Logoutbtn" onclick="leave(),display_menu(6)">Logout <i class="fas fa-sign-out-alt"></i></button>
       </div>
-      <div class="row">
-        <div class="cell" id="c08" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c09" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c10" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c11" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c12" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c13" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c14" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c15" onclick=""><div class="disc"></div></div>
-      </div>
-      <div class="row">
-        <div class="cell" id="c16" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c17" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c18" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c19" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c20" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c21" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c22" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c23" onclick=""><div class="disc"></div></div>
-      </div>
-      <div class="row">
-        <div class="cell" id="c24" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c25" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c26" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c27" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c28" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c29" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c30" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c31" onclick=""><div class="disc"></div></div>
-      </div>
-      <div class="row">
-        <div class="cell" id="c32" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c33" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c34" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c35" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c36" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c37" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c38" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c39" onclick=""><div class="disc"></div></div>
-      </div>
-      <div class="row">
-        <div class="cell" id="c40" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c41" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c42" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c43" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c44" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c45" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c46" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c47" onclick=""><div class="disc"></div></div>
-      </div>
-      <div class="row">
-        <div class="cell" id="c48" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c49" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c50" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c51" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c52" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c53" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c54" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c55" onclick=""><div class="disc"></div></div>
-      </div>
-      <div class="row">
-        <div class="cell" id="c56" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c57" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c58" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c59" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c60" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c61" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c62" onclick=""><div class="disc"></div></div>
-        <div class="cell" id="c63" onclick=""><div class="disc"></div></div>
-      </div>
-    </div>
-  </div>
 
-  <div id="Rules" onclick="">
-  </div>
+      <div class="gameScreen">
 
-  <!--<div id="buttons">
-    <div class ="align">
-      <button id="Button1" class="Button" onclick="display_menu(1);"><h3> Play </h3></button>
+        <div class="gameButtons align">
+          <div class="align">
+            <div id="Scoreboard">
+              <h2> Score </h2>
+              <h3 id="blackscr">Black: 2</h3>
+              <h3 id="whitescr">White: 2</h3>
+            </div>
+          </div>
+        </div>
+
+        <div id="game">
+          <h1 id="Turn">Black Turn</h1>
+            <div class="align">
+            <div id="grid"></div>
+          </div>
+        </div>
+
+        <div class="gameButtons align">
+            <button class="Button" id="Restartbtn" onclick="reset()">Restart <i class="fas fa-redo"></i></button>
+            <button class="Button" id="Forfeitbtn" onclick="forfeit()">Forfeit <i class="far fa-flag"></i></button>
+            <button class="Button" id="PlayAgainbtn" onclick="play_again()">Play Again <i class="fas fa-redo"></i></button>
+        </div>
+      </div>
+
+      <div id="bg-modal">
+        <div id="gameMessages" class ="Message">
+          <span class="close" onclick="close_message(1)">&times;</span>
+          <p id="say">Message to write</p>
+        </div>
+          <div id="Rules" class="Message">
+          <span class="close" onclick="close_message(2)">&times;</span>
+          <h1> Rules </h1>
+          <p>The game is played in an 8 by 8 board, with the middle 4 cells
+            already containing pieces when the game begins.
+            The top left and bottom right corners have white pieces with the
+            top right and bottom left corners being black.
+            In Othello, the Black player always moves first.</p>
+          <br>
+          <p>There can only be one piece placed per turn, and a piece can only
+             be placed in an empty cell adjacent to a piece of the opposite color,
+             such that a row of 1 or more of the opponent's discs is flanked by the
+             new disc and an existing disc of the player's color.
+             All of the opponent's discs between these two discs are turned over
+             to match the player's color.</p>
+          <br>
+          <p>If the current player cannot make a valid move, the turn is passed to
+             the other player. The game is over when neither player can make a move,
+             the board is full, or one of the player concedes the victory to the
+             opponent. In the first two cases, the player with the most pieces of their
+             color on the board wins.</p>
+        </div>
+
+        <div id="Scores" class="Message">
+          <span class="close" onclick="close_message(3)">&times;</span>
+          <div id ='ScoreAI'>
+            <h1> Scores </h1>
+            <p>
+              <span>Black</span>
+              vs
+              <span>White</span>
+            </p>
+            <p>
+              <span id="BScore"></span>
+              -
+              <span id="WScore"></span>
+            </p>
+          </div>
+          <div id="table"></div>
+        </div>
+      </div>
+
+      <div class="bar">Made by Francisco Ribeiro</div>
     </div>
-    <div class="align">
-      <button id="Button2" class="Button" onclick="display_menu(2);"><h3> Rules </h3></button>
+
+    <div id="Mode">
+      <h1>Select Mode</h1>
+      <button class="Button" onclick="join()" id="mode1">
+        <i class="fas fa-user"></i>
+        VS
+        <i class="fas fa-user"></i>
+      </button>
+      <button class="Button" onclick="play_history();display_menu(4);" id="mode2">
+        <i class="fas fa-user"></i>
+        VS
+        <i class="fas fa-brain"></i>
+      </button>
     </div>
-  </div>-->
+
+    <div id="Difficulty">
+      <h1>Select Difficulty</h1>
+      <div class="button_difficulty">
+        <button class="Button" onclick="difficulty_select(1);display_menu(5)" id="Hard">
+          <i class="fas fa-dice-one"></i>
+        </button>
+        <button class="Button" onclick="difficulty_select(2);display_menu(5)" id="Medium">
+          <i class="fas fa-dice-three"></i>
+        </button>
+        <button class="Button" onclick="difficulty_select(3);display_menu(5)" id="Easy">
+          <i class="fas fa-dice-six"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="DisColor">
+      <h1>Select Color</h1>
+      <button class="Button" onclick="player_color(1);display_menu(3);" id="black_disc">Black</button>
+
+      <button class="Button" onclick="player_color(2);display_menu(3);" id="white_disc">White</button>
+    </div>
+
   </body>
 </html>
